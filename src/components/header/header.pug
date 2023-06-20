@@ -1,0 +1,27 @@
+header.header
+   .container
+      .header__row
+         .header__logo
+            a(href="index.html")
+               img(src="img/logo.svg", alt="logo")
+         .header__items
+            .header__burger
+               .header__burger-line
+            nav.header__nav
+               li.header__wrap
+                  a.header__link(href='#cars').scroll-link Cars
+               li.header__wrap
+                  a.header__link(href='#feedback').scroll-link Feedback
+               li.header__wrap
+                  a.header__link(href='#faq').scroll-link F.A.Q
+               li.header__wrap
+                  a.header__link(href='#reqierments').scroll-link How to rent
+            .header__inner
+               .header__item
+                  img(src="img/header/language.svg", alt="world")
+                  span.header__selectors 
+                     span.header__select DE
+                     .header__others 
+                        span.header__select EN
+                        span.header__select RU
+            a(href="#sign" rel="modal:open").btn-red.popup-link.btn.header__btn Sign in

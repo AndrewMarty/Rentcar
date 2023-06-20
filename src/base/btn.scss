@@ -1,0 +1,19 @@
+.btn {
+	font-family: "Roboto", sans-serif;
+	color: $text;
+	cursor: pointer;
+	text-decoration: none;
+}
+.btn-red {
+	transition: 0.5s;
+	&:hover {
+		color: $light;
+		background: $main;
+	}
+}
+.btn-fill {
+	transition: 0.5s;
+	&:hover {
+		transform: scale(0.8);
+	}
+}

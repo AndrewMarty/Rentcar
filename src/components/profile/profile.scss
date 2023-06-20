@@ -1,0 +1,290 @@
+.profile {
+	&__title {
+		margin-bottom: 50px;
+	}
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		column-gap: 30px;
+	}
+	&__name {
+		font-size: 24px;
+		line-height: 28px;
+		grid-column: span 3;
+		border-right: 1px solid #000000;
+	}
+	&__items {
+		grid-column: span 9;
+		border-bottom: 1px solid #000000;
+	}
+	&__items-row {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: 65px;
+		padding-bottom: 40px;
+	}
+	&__item {
+		position: relative;
+		&:not(:last-child)::after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 1px;
+			height: 120px;
+			background: $text;
+			right: -37px;
+			top: 0;
+		}
+	}
+	&__item-name {
+		display: block;
+		font-size: 20px;
+		line-height: 23px;
+		margin-bottom: 15px;
+	}
+	&__item-lines {
+		margin-bottom: 10px;
+	}
+	&__item-line {
+		font-size: 16px;
+		line-height: 19px;
+		display: flex;
+		align-items: center;
+		margin-bottom: 16px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__item-icon {
+		margin-right: 8px;
+	}
+	&__buttons {
+		display: flex;
+	}
+	&__edit-btn,
+	&__cancel-btn {
+		padding: 7px 24px;
+		border: none;
+		background-color: $main;
+		font-size: 16px;
+		color: $light;
+		border-radius: 28px;
+		margin-right: 12px;
+		&:focus {
+			outline: none;
+		}
+	}
+	&__cancel-btn {
+		color: $text;
+		background-color: transparent;
+		border: 1px solid $main;
+		margin-right: 0;
+	}
+	&__delete-btn {
+		cursor: pointer;
+		color: $main;
+		display: flex;
+		align-items: center;
+	}
+	&__delete-icon {
+		margin-right: 6px;
+		padding-bottom: 2px;
+	}
+	&__item-false {
+		.profile__item-name {
+			opacity: 0.6;
+		}
+		.profile__item-lines {
+			opacity: 0.6;
+		}
+	}
+	&__form {
+		padding: 45px 0 70px;
+	}
+	&__body {
+		margin-bottom: 24px;
+	}
+	&__field {
+		margin-bottom: 16px;
+	}
+	&__input {
+		width: 410px;
+		padding: 18px 24px;
+		font-size: 20px;
+		line-height: 23px;
+		color: #290202;
+		background-color: $light;
+		border: 1px solid #290202;
+		border-radius: 40px;
+		&:focus {
+			outline: none;
+		}
+	}
+	&__add-btn {
+		display: flex;
+		align-items: center;
+		background: transparent;
+		font-size: 20px;
+		line-height: 23px;
+		color: $text;
+		padding: 10px 16px;
+		border: 1px solid $main;
+		border-radius: 28px;
+		img {
+			margin-right: 8px;
+		}
+	}
+	&__submit-btn {
+		border: none;
+		padding: 16px 24px;
+		background: $main;
+		border-radius: 28px;
+		font-size: 20px;
+		line-height: 23px;
+		color: $light;
+	}
+	&__settings {
+		padding-top: 45px;
+	}
+	&__history {
+		padding-top: 48px;
+	}
+	&__items-history {
+		.profile__items-row {
+			padding-top: 48px;
+		}
+	}
+	&__more-btn {
+		display: block;
+		margin-left: auto;
+		padding: 8px 24px;
+		font-size: 16px;
+		line-height: 19px;
+		background-color: $light;
+		border: 1px solid $main;
+		border-radius: 28px;
+		margin-bottom: 16px;
+	}
+	@media (max-width: 1500px) {
+		&__name {
+			font-size: 20px;
+			line-height: 24px;
+		}
+		&__item-name {
+			font-size: 18px;
+			line-height: 21px;
+		}
+		&__item-line {
+			font-size: 14px;
+			line-height: 17px;
+			margin-bottom: 14px;
+		}
+		&__cancel-btn,
+		&__edit-btn {
+			font-size: 14px;
+		}
+		&__input,
+		&__add-btn,
+		&__submit-btn {
+			font-size: 16px;
+			line-height: 21px;
+		}
+		&__more-btn,
+		&__delete-btn {
+			font-size: 14px;
+			line-height: 17px;
+		}
+	}
+	@media (max-width: 780px) {
+		&__title {
+			margin-bottom: 0;
+		}
+		&__grid {
+			grid-template-columns: 1fr;
+		}
+		&__items {
+			grid-column: span 1;
+			overflow: hidden;
+			transition: 1.2s;
+		}
+		&__items-history {
+			.profile__items-row {
+				padding-top: 0px;
+			}
+		}
+		&__form-wrapper {
+			overflow: hidden;
+			transition: 0.8s;
+		}
+		&__items-row {
+			padding: 0 0 20px;
+			grid-template-columns: 1fr;
+			border-bottom: 0;
+			row-gap: 20px;
+		}
+		&__item:not(:last-child)::after {
+			display: none;
+		}
+		&__name {
+			position: relative;
+			font-size: 16px;
+			line-height: 19px;
+			padding: 16px 0;
+			border-right: 0;
+			grid-column: span 1;
+			margin-bottom: 10px;
+			border-bottom: 1px solid #000000;
+			&::after {
+				top: 50%;
+				content: "";
+				width: 6px;
+				display: block;
+				position: absolute;
+				height: 7px;
+				right: 0;
+				border-right: 2px solid $text;
+				border-bottom: 2px solid $text;
+				transform: translateY(-50%) rotate(45deg);
+			}
+		}
+		&__name-active {
+			&::after {
+				top: 50%;
+				content: "";
+				width: 6px;
+				display: block;
+				position: absolute;
+				height: 6px;
+				right: 0;
+				border-right: 2px solid $text;
+				border-bottom: 2px solid $text;
+				transform: translateY(-50%) rotate(-135deg);
+			}
+		}
+		&__input {
+			width: 100%;
+		}
+		&__edit-btn,
+		&__cancel-btn {
+			flex-grow: 1;
+		}
+		&__form {
+			transition: 0.8s;
+			overflow: hidden;
+			padding: 10px 0 30px;
+		}
+		&__submit-btn,
+		&__add-btn {
+			width: 100%;
+		}
+		&__add-btn {
+			justify-content: center;
+		}
+		&__delete-btn {
+			justify-content: center;
+		}
+		&__more-btn {
+			display: none;
+		}
+	}
+}

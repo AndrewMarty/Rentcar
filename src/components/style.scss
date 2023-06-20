@@ -1,0 +1,37 @@
+@import "vars";
+@import "normalize";
+@import "../base/fonts";
+@import "../base/btn";
+@import "../base/container";
+@import "../base/slick";
+@import "../base/title";
+@import "../base/timepicker";
+@import "header/header";
+@import "advantages/advantages";
+@import "screen/screen";
+@import "subscreen/subscreen";
+@import "cars/cars";
+@import "reqierments/reqierments";
+@import "faq/faq";
+@import "feedback/feedback";
+@import "footer/footer";
+@import "profile/profile";
+@import "history/history";
+@import "popup/popup";
+body {
+	background: $light;
+	padding-top: 122px;
+}
+.lock {
+	overflow: hidden;
+}
+@media (max-width: 1500px) {
+	body {
+		padding-top: 108px;
+	}
+}
+@media (max-width: 768px) {
+	body {
+		padding-top: 82px;
+	}
+}

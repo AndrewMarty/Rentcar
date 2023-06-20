@@ -1,0 +1,262 @@
+.footer {
+	background: $text;
+	&__wrap {
+		padding: 26px 0 31px;
+		position: relative;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	&__form {
+		display: flex;
+		justify-content: center;
+	}
+	&__field {
+		width: 435px;
+		padding: 16px 20px;
+		background: transparent;
+		margin-right: 18px;
+		font-size: 16px;
+		line-height: 19px;
+		color: rgba(255, 255, 255, 0.5);
+		border: 1px solid $light;
+		border-radius: 34px;
+		&:focus {
+			outline: none;
+		}
+	}
+	&__btn {
+		border: none;
+		color: $light;
+		font-size: 16px;
+		line-height: 19px;
+		padding: 16px 24px;
+		background-color: $main;
+		border-radius: 53px;
+	}
+	&__content {
+		position: relative;
+	}
+	&__inner {
+		padding: 20px 0 33px;
+	}
+	&__grid {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		margin-bottom: 80px;
+	}
+	&__item {
+		grid-column: span 2;
+	}
+	&__link,
+	&__contact {
+		display: block;
+		font-size: 16px;
+		line-height: 19px;
+		text-decoration: none;
+		color: $light;
+		margin-bottom: 24px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__contact {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		margin-bottom: 19px;
+	}
+	&__icon {
+		margin-right: 8px;
+	}
+	&__socials {
+		display: flex;
+		.footer__terms {
+			display: none;
+		}
+	}
+	&__social {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		border: 1px solid $light;
+		margin-right: 8px;
+		img {
+			width: 20px;
+			height: 20px;
+			display: block;
+		}
+	}
+	&__row {
+		display: flex;
+	}
+	&__rights {
+		margin: 0;
+		max-width: 232px;
+		font-size: 16px;
+		line-height: 19px;
+		color: $light;
+		opacity: 0.5;
+		margin-right: 24px;
+	}
+	&__link-other {
+		display: block;
+		font-size: 14px;
+		line-height: 16px;
+		text-decoration-line: underline;
+		color: $light;
+		opacity: 0.5;
+		margin-bottom: 15px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__photo {
+		width: 913px;
+		height: 100%;
+		bottom: 0;
+		right: 0;
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+		position: absolute;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 46%;
+			top: 38%;
+			width: 39px;
+			height: 44px;
+			background: center / cover url("../img/footer/place.png");
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(
+				74.16deg,
+				#290202 18.17%,
+				rgba(41, 2, 2, 0) 40.26%,
+				rgba(41, 2, 2, 0) 100%
+			);
+		}
+	}
+	&__photo-small {
+		display: none;
+		&::before {
+			left: 49%;
+			top: 43%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	&__end {
+		display: none;
+	}
+	@media (max-width: 1500px) {
+		&__logo {
+			width: 170px;
+		}
+		&__grid {
+			margin-bottom: 60px;
+		}
+		&__link {
+			font-size: 14px;
+			line-height: 17px;
+			margin-bottom: 20px;
+		}
+		&__rights {
+			font-size: 14px;
+			line-height: 17px;
+		}
+	}
+	@media (max-width: 768px) {
+		&__wrap {
+			padding: 20px 0;
+		}
+		&__form {
+			flex-wrap: wrap;
+		}
+		&__grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+			margin-bottom: 0;
+		}
+		&__inner {
+			padding: 10px 0;
+		}
+		&__socials {
+			.footer__terms {
+				display: block;
+			}
+		}
+		&__item {
+			text-align: center;
+		}
+		&__logo {
+			width: 116px;
+			height: 31px;
+		}
+		&__row {
+			display: none;
+		}
+		&__rights {
+			display: none;
+		}
+		&__photo {
+			display: none;
+		}
+		&__photo-small {
+			position: relative;
+			width: 100%;
+			height: 396px;
+			display: block;
+			&::after {
+				display: none;
+			}
+		}
+		&__list {
+			display: flex;
+		}
+		&__socials {
+			align-items: flex-end;
+		}
+		&__terms {
+			margin-left: auto;
+		}
+		&__link {
+			margin-bottom: 0;
+			margin-right: 16px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&__field {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 8px;
+		}
+		&__btn {
+			text-align: left;
+			width: 100%;
+		}
+		&__end {
+			max-width: 214;
+			padding: 20px 0;
+			text-align: center;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+}

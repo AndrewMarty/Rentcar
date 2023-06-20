@@ -1,0 +1,136 @@
+.faq {
+	overflow: hidden;
+	background-color: $text;
+	padding: 30px 0 38px;
+	position: relative;
+	&__container {
+		position: relative;
+		z-index: 10;
+	}
+	&__title {
+		color: $light;
+		text-align: left;
+		margin-bottom: 32px;
+	}
+	&__list {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		counter-reset: my-counter;
+		color: $light;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 24px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__item::before {
+		font-weight: 400;
+		font-size: 36px;
+		line-height: 42px;
+		color: $light;
+		content: counter(my-counter);
+		counter-increment: my-counter;
+		margin-right: 22px;
+	}
+	&__inner {
+		padding-left: 22px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		&::after {
+			position: absolute;
+			content: "";
+			height: 30px;
+			width: 1px;
+			background-color: $light;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	&__name {
+		font-size: 20px;
+		line-height: 23px;
+		color: $light;
+	}
+	&__desc {
+		margin: 0;
+		font-size: 16px;
+		line-height: 19px;
+		color: $light;
+		opacity: 0.5;
+	}
+	&__photo {
+		width: 1055px;
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		&::after {
+			content: "";
+			top: 0;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(
+				89.81deg,
+				#290202 0.18%,
+				rgba(0, 0, 0, 0) 99.86%
+			);
+		}
+		img {
+			object-fit: cover;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	@media (max-width: 1500px) {
+		&__item {
+			&::before {
+				font-size: 29px;
+			}
+		}
+		&__name {
+			font-size: 16px;
+			line-height: 21px;
+		}
+		&__desc {
+			font-size: 14px;
+			line-height: 17px;
+		}
+	}
+	@media (max-width: 768px) {
+		&__title {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		&__name {
+			font-size: 16px;
+			line-height: 19px;
+		}
+		&__inner {
+			padding-left: 8px;
+		}
+		&__item {
+			&::before {
+				margin-right: 8px;
+			}
+		}
+		&__photo {
+			width: 100vw;
+			&::after {
+				background: linear-gradient(
+					0deg,
+					rgba(0, 0, 0, 0.5),
+					rgba(0, 0, 0, 0.8)
+				);
+			}
+		}
+	}
+}

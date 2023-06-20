@@ -1,0 +1,75 @@
+mixin item
+   .profile__item
+      span.profile__item-name Renault Clio 2022
+      .profile__item-lines 
+         span.profile__item-line
+            img(src="img/profile/icon_1.svg", alt="icon").profile__item-icon
+            | 22.04.2022 - 25.04.2022
+         span.profile__item-line
+            img(src="img/profile/icon_2.svg", alt="icon").profile__item-icon
+            | Berlin, Northon str, 25
+         span.profile__item-line
+            img(src="img/profile/icon_3.svg", alt="icon").profile__item-icon
+            | 17:30
+         span.profile__item-line
+            img(src="img/profile/icon_4.svg", alt="icon").profile__item-icon
+            | 240
+      .profile__buttons
+         button.profile__edit-btn.btn.btn-fill Edit
+         button.profile__cancel-btn.btn.btn-red Cancel
+mixin item-false 
+   .profile__item.profile__item-false
+      span.profile__item-name Renault Clio 2022
+      .profile__item-lines 
+         span.profile__item-line
+            img(src="img/profile/icon_1.svg", alt="icon").profile__item-icon
+            | 22.04.2022 - 25.04.2022
+         span.profile__item-line
+            img(src="img/profile/icon_2.svg", alt="icon").profile__item-icon
+            | Berlin, Northon str, 25
+         span.profile__item-line
+            img(src="img/profile/icon_3.svg", alt="icon").profile__item-icon
+            | 17:30
+         span.profile__item-line
+            img(src="img/profile/icon_4.svg", alt="icon").profile__item-icon
+            | 240
+      span.profile__delete-btn 
+         img(src="img/profile/trash.svg", alt="trash").profile__delete-icon
+         | Delete
+section.profile 
+   .container 
+      h2.title.profile__title Account
+      .profile__grid 
+         .profile__name
+            span.profile__name-text Active booking
+         .profile__items 
+            .profile__items-row 
+               +item
+               +item 
+               +item 
+               +item
+         .profile__name.profile__history
+            span.profile__name-text History
+         .profile__items.profile__items-history
+            .profile__items-row
+               +item-false
+               +item-false
+               +item-false
+               +item-false
+            button.btn.btn-red.profile__more-btn Load more
+         .profile__name.profile__settings
+            span.profile__name-text Settings
+         .profile__form-wrapper 
+            form.profile__form 
+               .profile__body 
+                  .profile__field 
+                     input(type="text" placeholder="Name").profile__input
+                  .profile__field 
+                     input(type="text" placeholder="Last name").profile__input
+                  .profile__field 
+                     input(type="text" placeholder="Change password").profile__input
+                  button.btn.profile__add-btn
+                     img(src="img/profile/plus.svg", alt="plus")
+                     | Add photo
+               button.profile__submit-btn.btn.btn-fill(type="submit") Save chahges
+               

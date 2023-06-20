@@ -1,0 +1,414 @@
+.popup {
+	height: 100vh;
+	width: 100vw;
+	transition: 0.4s;
+	transition-property: opacity;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index: 1000;
+	&__back {
+		background-color: rgba(0, 0, 0, 0.4);
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&.active {
+		pointer-events: auto;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__body {
+		position: relative;
+		padding: 50px 0;
+		width: 630px;
+		margin: 0 auto;
+		background-color: #fff;
+		border-radius: 16px;
+	}
+
+	&__modal {
+		opacity: 0;
+		visibility: hidden;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+	}
+	&__form-reg {
+		margin: 0 auto;
+		max-width: 410px;
+	}
+	&__active {
+		transition: opacity 0.6s;
+		z-index: 999;
+		opacity: 1;
+		visibility: visible;
+	}
+	&__title {
+		font-size: 24px;
+		line-height: 28px;
+		margin-bottom: 30px;
+	}
+	&__fields {
+		margin-bottom: 8px;
+	}
+	&__field {
+		position: relative;
+		margin-bottom: 16px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__input {
+		width: 100%;
+		padding: 16px 24px;
+		font-size: 20px;
+		line-height: 23px;
+		border: 1px solid #290202;
+		border-radius: 40px;
+	}
+	&__check {
+		width: 0;
+		opacity: 0;
+		height: 0px;
+		&:checked + .popup__checkbox {
+			opacity: 1;
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+	&__checkbox {
+		flex-shrink: 0;
+		transition: 0.5s;
+		position: relative;
+		width: 16px;
+		height: 16px;
+		margin-right: 8px;
+		border: 1px solid $text;
+		border-radius: 2px;
+		margin-right: 8px;
+		&::after {
+			transition: 0.5s;
+			content: "";
+			width: 8px;
+			height: 6px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			position: absolute;
+			opacity: 0;
+			background: center / cover url("../img/screen/true.png");
+		}
+	}
+	&__label {
+		cursor: pointer;
+		display: flex;
+		margin-bottom: 30px;
+	}
+	&__log-btn {
+		display: block;
+		width: max-content;
+		margin: 0 auto;
+		color: $light;
+		padding: 12px 48px;
+		background: $main;
+		border-radius: 28px;
+		border: none;
+		margin-bottom: 8px;
+	}
+	&__terms {
+		color: $text;
+		span {
+			text-decoration: none;
+		}
+	}
+	&__wrap-link {
+		text-align: center;
+	}
+	&__link {
+		color: $text;
+		font-size: 16px;
+		line-height: 19px;
+	}
+	&__close {
+		cursor: pointer;
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		width: 24px;
+		height: 24px;
+		background: center / cover url("../img/popup/close.png");
+	}
+	&__link-sign {
+		display: block;
+		margin-bottom: 30px;
+	}
+	&__modal-cars {
+		width: 100%;
+		.popup__body {
+			padding: 88px 16px 16px;
+			width: 100%;
+			max-width: 1290px;
+		}
+	}
+	&__row {
+		display: flex;
+	}
+	&__item {
+		position: relative;
+		margin-right: 33px;
+		&:not(:last-child)::after {
+			position: absolute;
+			content: "";
+			width: 1px;
+			height: 120px;
+			background: $text;
+			top: 0;
+			display: block;
+			right: -17px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&__item-charac {
+		flex-shrink: 0;
+	}
+	&__car-subinfo {
+		display: none;
+	}
+	&__desc {
+		font-size: 16px;
+		line-height: 19px;
+		display: block;
+		margin-bottom: 4px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__car-name {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 28px;
+		position: absolute;
+		left: 16px;
+		top: 16px;
+	}
+	&__car-photo {
+		margin: 0 auto;
+		width: 775px;
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+	&__car-line {
+		display: flex;
+		margin-bottom: 12px;
+		img {
+			margin-right: 8px;
+		}
+	}
+	&__row {
+		padding-top: 23px;
+		position: relative;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			width: 84%;
+			left: 50%;
+			background: $text;
+			transform: translateX(-50%);
+			height: 1px;
+		}
+	}
+	&__car-btn {
+		display: block;
+		margin: 0 auto;
+		padding: 16px 48px;
+		font-size: 20px;
+		line-height: 23px;
+		background: $main;
+		color: $light;
+		border: none;
+		border-radius: 45px;
+	}
+	&__return {
+		font-size: 20px;
+		line-height: 23px;
+		display: none;
+	}
+	&__car-info {
+		display: none;
+	}
+	&__more {
+		position: relative;
+		display: none;
+		color: $text;
+		font-size: 16px;
+		line-height: 19px;
+		padding-right: 20px;
+		border-bottom: 1px solid #000000;
+		text-decoration: none;
+		margin-bottom: 20px;
+		&::after {
+			content: "";
+			width: 5px;
+			height: 5px;
+			border-right: 2px solid $text;
+			border-bottom: 2px solid $text;
+			position: absolute;
+			right: 3px;
+			top: 50%;
+			transform: translateY(-50%) rotate(-45deg);
+		}
+	}
+	&__eye {
+		top: 50%;
+		transform: translateY(-50%);
+		right: 24px;
+		position: absolute;
+		cursor: pointer;
+		img {
+			width: 24px;
+			height: 24px;
+		}
+		img:last-child {
+			display: none;
+		}
+	}
+	&__eye-active {
+		img:first-child {
+			display: none;
+		}
+		img:last-child {
+			display: block;
+		}
+	}
+	@media (max-width: 1500px) {
+		&__body {
+			padding: 35px 0;
+			width: 590px;
+		}
+		&__input {
+			padding: 14px 24px;
+			font-size: 16px;
+			line-height: 21px;
+		}
+		&__label-text {
+			font-size: 14px;
+			line-height: 17px;
+		}
+		&__label {
+			margin-bottom: 25px;
+		}
+		&__link-asign {
+			margin-bottom: 25px;
+		}
+		&__link {
+			font-size: 14px;
+			line-height: 17px;
+		}
+		&__log-btn {
+			font-size: 14px;
+			line-height: 17px;
+		}
+		&__car-photo {
+			width: 550px;
+		}
+		&__body-cars {
+			padding: 40px 16px 16px;
+		}
+		&__popup-desc {
+			font-size: 14px;
+		}
+	}
+	@media (max-width: 768px) {
+		&__active {
+			width: calc(100% - 40px);
+		}
+		&__body {
+			padding: 50px 8px;
+			width: 100%;
+		}
+		&__body-cars {
+			overflow: scroll;
+		}
+		&__modal-cars {
+			width: 100%;
+			.popup__body {
+				border-radius: 0;
+				padding: 8px 20px;
+				height: 100vh;
+			}
+			.popup__close {
+				display: none;
+			}
+		}
+		&__car-photo {
+			width: 100%;
+		}
+		&__car-name {
+			position: static;
+			display: block;
+			margin-bottom: 6px;
+		}
+		&__car-btn {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		&__return {
+			display: block;
+			text-align: center;
+		}
+		&__row {
+			display: none;
+		}
+		&__car-info {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 20px;
+			row-gap: 10px;
+			margin-bottom: 20px;
+		}
+		&__car-line {
+			margin-bottom: 0;
+			img {
+				width: 20px;
+				height: 20px;
+			}
+		}
+		&__car-subinfo {
+			display: grid;
+			column-gap: 20px;
+			grid-template-columns: repeat(2, 1fr);
+			margin-bottom: 14px;
+		}
+		&__cain-subinfo-text {
+			display: block;
+			opacity: 0.5;
+			font-size: 16px;
+			line-height: 19px;
+			margin-bottom: 4px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&__more {
+			margin-left: auto;
+			display: block;
+			width: max-content;
+		}
+	}
+}

@@ -1,0 +1,6 @@
+.subscreen {
+	display: none;
+	@media (max-width: 480px) {
+		display: block;
+	}
+}
